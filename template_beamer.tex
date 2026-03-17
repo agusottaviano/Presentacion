@@ -10,8 +10,11 @@
 \usetheme{Madrid}           % Otros: Antibes, Bergen, Berlin, CambridgeUS, Copenhagen, etc.
 \usecolortheme{default}     % Otros: albatross, beaver, beetle, crane, dolphin, dove, etc.
 
+% === ELIMINAR BARRA DE NAVEGACIÓN ===
+\setbeamertemplate{navigation symbols}{}
+
 % === INFORMACIÓN DEL DOCUMENTO ===
-\title{Mi Primera Presentación}
+\title{Presentación}
 \subtitle{Un template básico de Beamer}
 \author{Tu Nombre}
 \institute{Tu Institución}
@@ -93,10 +96,12 @@
         
         \column{0.5\textwidth}
         Contenido de la columna derecha
-        \begin{itemize}
-            \item Punto A
-            \item Punto B
-        \end{itemize}
+
+        \includegraphics[width=0.6\textwidth]{Imagenes/ImagenAAO.jpg}
+        % \begin{itemize}
+        %     \item Punto A
+        %     \item Punto B
+        % \end{itemize}
     \end{columns}
 \end{frame}
 
@@ -126,13 +131,12 @@
 \section{Figuras}
 
 \begin{frame}{Insertar Imágenes}
-    % Comentado porque no tenemos imagen, descomenta y añade tu ruta
-    % \includegraphics[width=0.6\textwidth]{imagen.png}
-    
     Para insertar una imagen usa:
-    \begin{block}{Sintaxis}
-        \texttt{\textbackslash includegraphics[width=0.6\textbackslash textwidth]\{imagen.png\}}
-    \end{block}
+
+    \includegraphics[width=0.6\textwidth]{Imagenes/ImagenAAO.jpg}
+    
+    
+   
 \end{frame}
 
 % ============================================
