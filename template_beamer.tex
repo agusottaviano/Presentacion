@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169, 10pt]{beamer}
 
 % === PREÁMBULO ===
 \usepackage[utf8]{inputenc}
@@ -36,8 +36,12 @@
 % === ELIMINAR BARRA DE NAVEGACIÓN ===
 \setbeamertemplate{navigation symbols}{}
 
-% === ELIMINAR BARRA DE NAVEGACIÓN ===
-\setbeamertemplate{navigation symbols}{}
+% === TAMAÑOS DE FUENTES ===
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries, size=\small}
+\setbeamerfont{block body}{size=\small}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
 
 % === INFORMACIÓN DEL DOCUMENTO ===
 \title{Mi Primera Presentación}
@@ -70,25 +74,30 @@
 
 \begin{frame}{Diapositiva Simple}
 
-    \begin{block}{Material: AAO}
-        Membrana nanoestructurada con poros cilíndricos organizados en red hexagonal. Sus propiedades ópticas y mecánicas dependen de la geometría de los poros.
-    \end{block}
 
-    \begin{block}{Objetivo}
-        Predecir automáticamente los parámetros geométricos de una imagen SEM.
-    \end{block}
 
 \end{frame}
 
-\begin{frame}{Diapositiva con Viñetas}
+\begin{frame}{El problema: Medir la geometría de los poros}
     \begin{columns}[T]
         \column{0.5\textwidth}
 
-        \begin{block}{5 variables objetivo}
-            $R$, $\sigma_R$ Radio promedio y dispersión\\
-            $DCC$, $\sigma_{DCC}$ Distancia centro a centro y dispersión \\
-            $P$ porosidad
+        \begin{block}{Material: AAO}
+            Membrana nanoestructurada con poros cilíndricos organizados en red hexagonal. Sus propiedades ópticas y mecánicas dependen de la geometría de los poros.
         \end{block}
+
+        \begin{block}{Objetivo}
+            Predecir automáticamente los parámetros geométricos de una imagen SEM.
+        \end{block}
+
+        \begin{alertblock}{5 variables objetivo}
+            \renewcommand{\arraystretch}{1.25}
+            \begin{tabular}{@{}lll@{}}
+              $R$,\;$\sigma_R$       & Radio promedio y dispersión [px] \\
+              $DCC$,\;$\sigma_{DCC}$ & Distancia centro a centro [px] \\
+              $P$                    & Porosidad (\%)                  \\
+            \end{tabular}
+        \end{alertblock}
 
 
         \column{0.5\textwidth}
@@ -171,7 +180,12 @@
 
 \begin{frame}{Insertar Imágenes}
 
-    \includegraphics[width=0.6\textwidth]{Imagenes/ImagenAAO.png}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{Imagenes/ImagenAAO.png}
+        
+    \end{center}
+
+    
     
     
 \end{frame}
