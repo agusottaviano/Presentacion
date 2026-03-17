@@ -1,0 +1,165 @@
+\documentclass{beamer}
+
+% === PREÁMBULO ===
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+% === TEMA Y COLORES ===
+\usetheme{Madrid}           % Otros: Antibes, Bergen, Berlin, CambridgeUS, Copenhagen, etc.
+\usecolortheme{default}     % Otros: albatross, beaver, beetle, crane, dolphin, dove, etc.
+
+% === INFORMACIÓN DEL DOCUMENTO ===
+\title{Mi Primera Presentación}
+\subtitle{Un template básico de Beamer}
+\author{Tu Nombre}
+\institute{Tu Institución}
+\date{\today}
+
+% === LOGO (OPCIONAL) ===
+% \logo{\includegraphics[height=1.5cm]{logo.png}}
+
+\begin{document}
+
+% ============================================
+% DIAPOSITIVA DE TÍTULO
+% ============================================
+\frame{\titlepage}
+
+% ============================================
+% TABLA DE CONTENIDOS
+% ============================================
+\begin{frame}{Contenido}
+    \tableofcontents
+\end{frame}
+
+% ============================================
+% SECCIÓN 1: DIAPOSITIVAS BÁSICAS
+% ============================================
+\section{Diapositivas Básicas}
+
+\begin{frame}{Diapositiva Simple}
+    Esta es una diapositiva con contenido simple.
+    
+    Puedes escribir párrafos aquí sin problemas.
+\end{frame}
+
+\begin{frame}{Diapositiva con Viñetas}
+    Los puntos principales son:
+    \begin{itemize}
+        \item Primer punto
+        \item Segundo punto
+        \item Tercer punto
+            \begin{itemize}
+                \item Subpunto 1
+                \item Subpunto 2
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% ============================================
+% SECCIÓN 2: BLOQUES Y CUADROS
+% ============================================
+\section{Bloques y Cuadros}
+
+\begin{frame}{Bloques de Énfasis}
+    \begin{block}{Bloque Estándar}
+        Este es un bloque normal con fondo de color.
+    \end{block}
+    
+    \begin{alertblock}{Bloque de Alerta}
+        Este bloque destaca algo importante.
+    \end{alertblock}
+    
+    \begin{exampleblock}{Bloque de Ejemplo}
+        Este bloque muestra un ejemplo.
+    \end{exampleblock}
+\end{frame}
+
+% ============================================
+% SECCIÓN 3: COLUMNAS Y LAYOUTS
+% ============================================
+\section{Columnas}
+
+\begin{frame}{Dos Columnas}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        Contenido de la columna izquierda
+        \begin{itemize}
+            \item Punto 1
+            \item Punto 2
+        \end{itemize}
+        
+        \column{0.5\textwidth}
+        Contenido de la columna derecha
+        \begin{itemize}
+            \item Punto A
+            \item Punto B
+        \end{itemize}
+    \end{columns}
+\end{frame}
+
+% ============================================
+% SECCIÓN 4: MATEMÁTICAS
+% ============================================
+\section{Ecuaciones}
+
+\begin{frame}{Ecuaciones Matemáticas}
+    Una ecuación inline: $E = mc^2$
+    
+    Una ecuación en modo destaque:
+    \[
+        \int_0^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+    \]
+    
+    Sistema de ecuaciones:
+    \begin{align*}
+        a + b &= c \\
+        d - e &= f
+    \end{align*}
+\end{frame}
+
+% ============================================
+% SECCIÓN 5: IMÁGENES Y FIGURAS
+% ============================================
+\section{Figuras}
+
+\begin{frame}{Insertar Imágenes}
+    % Comentado porque no tenemos imagen, descomenta y añade tu ruta
+    % \includegraphics[width=0.6\textwidth]{imagen.png}
+    
+    Para insertar una imagen usa:
+    \begin{block}{Sintaxis}
+        \texttt{\textbackslash includegraphics[width=0.6\textbackslash textwidth]\{imagen.png\}}
+    \end{block}
+\end{frame}
+
+% ============================================
+% SECCIÓN 6: LISTAS NUMERADAS Y CÓDIGO
+% ============================================
+\section{Listas Numeradas}
+
+\begin{frame}{Listas Numeradas}
+    Pasos a seguir:
+    \begin{enumerate}
+        \item Primer paso
+        \item Segundo paso
+        \item Tercer paso
+    \end{enumerate}
+\end{frame}
+
+% ============================================
+% DIAPOSITIVA FINAL
+% ============================================
+\begin{frame}[plain]
+    \begin{center}
+        {\Large \textbf{¡Gracias!}}
+        
+        \vspace{1cm}
+        
+        Preguntas e inquietudes
+    \end{center}
+\end{frame}
+
+\end{document}
