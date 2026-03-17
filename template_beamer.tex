@@ -5,10 +5,36 @@
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+% === PALETA DE COLORES ===
+\definecolor{C1}{RGB}{20, 80, 60}       % verde oscuro — estructura
+\definecolor{C2}{RGB}{46, 139, 104}     % verde medio — acento
+\definecolor{C3}{RGB}{210, 240, 225}    % verde muy claro — fondo bloque
+\definecolor{CA}{RGB}{180, 100, 20}     % naranja — alerta / énfasis
+\definecolor{CG}{RGB}{245, 245, 242}    % gris cálido — fondo slide
+\definecolor{CT}{RGB}{30, 30, 30}       % texto principal
 
 % === TEMA Y COLORES ===
 \usetheme{Madrid}           % Otros: Antibes, Bergen, Berlin, CambridgeUS, Copenhagen, etc.
 \usecolortheme{default}     % Otros: albatross, beaver, beetle, crane, dolphin, dove, etc.
+
+% === CONFIGURAR COLORES BEAMER ===
+\setbeamercolor{normal text}{fg=CT, bg=CG}
+\setbeamercolor{frametitle}{fg=white, bg=C1}
+\setbeamercolor{structure}{fg=C1}
+\setbeamercolor{block title}{bg=C1, fg=white}
+\setbeamercolor{block body}{bg=C3}
+\setbeamercolor{block title alerted}{bg=CA, fg=white}
+\setbeamercolor{block body alerted}{bg=CA!12}
+\setbeamercolor{block title example}{bg=C2, fg=white}
+\setbeamercolor{block body example}{bg=C2!15}
+\setbeamertemplate{itemize item}{\color{C2}\textbullet}
+\setbeamertemplate{itemize subitem}{\color{C2}$\circ$}
+
+% === ELIMINAR BARRA DE NAVEGACIÓN ===
+\setbeamertemplate{navigation symbols}{}
 
 % === ELIMINAR BARRA DE NAVEGACIÓN ===
 \setbeamertemplate{navigation symbols}{}
@@ -43,22 +69,35 @@
 \section{Diapositivas Básicas}
 
 \begin{frame}{Diapositiva Simple}
-    Esta es una diapositiva con contenido simple.
-    
-    Puedes escribir párrafos aquí sin problemas.
+
+    \begin{block}{Material: AAO}
+        Membrana nanoestructurada con poros cilíndricos organizados en red hexagonal. Sus propiedades ópticas y mecánicas dependen de la geometría de los poros.
+    \end{block}
+
+    \begin{block}{Objetivo}
+        Predecir automáticamente los parámetros geométricos de una imagen SEM.
+    \end{block}
+
 \end{frame}
 
 \begin{frame}{Diapositiva con Viñetas}
-    Los puntos principales son:
-    \begin{itemize}
-        \item Primer punto
-        \item Segundo punto
-        \item Tercer punto
-            \begin{itemize}
-                \item Subpunto 1
-                \item Subpunto 2
-            \end{itemize}
-    \end{itemize}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+
+        \begin{block}{5 variables objetivo}
+            $R$, $\sigma_R$ Radio promedio y dispersión\\
+            $DCC$, $\sigma_{DCC}$ Distancia centro a centro y dispersión \\
+            $P$ porosidad
+        \end{block}
+
+
+        \column{0.5\textwidth}
+
+        \begin{center}
+            \includegraphics[width=0.7\textwidth]{Imagenes/ImagenAAO.png}
+        \end{center}
+
+    \end{columns}
 \end{frame}
 
 % ============================================
@@ -79,6 +118,8 @@
         Este bloque muestra un ejemplo.
     \end{exampleblock}
 \end{frame}
+
+
 
 % ============================================
 % SECCIÓN 3: COLUMNAS Y LAYOUTS
@@ -130,7 +171,7 @@
 
 \begin{frame}{Insertar Imágenes}
 
-    \includegraphics[width=0.6\textwidth]{Imagenes/ImagenAAO.jpg}
+    \includegraphics[width=0.6\textwidth]{Imagenes/ImagenAAO.png}
     
     
 \end{frame}
