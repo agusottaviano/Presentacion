@@ -1,7 +1,8 @@
 \babel@toc {spanish}{}\relax 
 \beamer@sectionintoc {1}{Diapositivas Básicas}{3}{0}{1}
-\beamer@sectionintoc {2}{Bloques y Cuadros}{5}{0}{2}
-\beamer@sectionintoc {3}{Columnas}{6}{0}{3}
-\beamer@sectionintoc {4}{Ecuaciones}{7}{0}{4}
-\beamer@sectionintoc {5}{Figuras}{8}{0}{5}
-\beamer@sectionintoc {6}{Listas Numeradas}{9}{0}{6}
+\beamer@sectionintoc {2}{Generación del Dataset Simulado}{5}{0}{2}
+\beamer@sectionintoc {3}{Bloques y Cuadros}{6}{0}{3}
+\beamer@sectionintoc {4}{Columnas}{6}{0}{4}
+\beamer@sectionintoc {5}{Ecuaciones}{7}{0}{5}
+\beamer@sectionintoc {6}{Figuras}{8}{0}{6}
+\beamer@sectionintoc {7}{Listas Numeradas}{9}{0}{7}

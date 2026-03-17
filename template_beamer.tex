@@ -7,6 +7,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
 
 % === PALETA DE COLORES ===
 \definecolor{C1}{RGB}{20, 80, 60}       % verde oscuro — estructura
@@ -110,23 +112,81 @@
 \end{frame}
 
 % ============================================
-% SECCIÓN 2: BLOQUES Y CUADROS
+% SECCIÓN 2: Generación del Dataset Simulado
 % ============================================
-\section{Bloques y Cuadros}
 
-\begin{frame}{Bloques de Énfasis}
-    \begin{block}{Bloque Estándar}
-        Este es un bloque normal con fondo de color.
-    \end{block}
-    
-    \begin{alertblock}{Bloque de Alerta}
-        Este bloque destaca algo importante.
-    \end{alertblock}
-    
-    \begin{exampleblock}{Bloque de Ejemplo}
-        Este bloque muestra un ejemplo.
-    \end{exampleblock}
+\section{Generación del Dataset Simulado}
+
+\begin{frame}{Generación del Dataset Simulado}
+
+
+
+\begin{columns}[t] % alineación arriba
+    \column{0.32\textwidth}
+
+% ---- COLUMNA IZQUIERDA (tabla) ----
+
+    \begin{block}{Parámetros aleatorios por imagen}
+
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}ll@{}}
+        \toprule
+        Parámetro & Rango \\
+        \midrule
+        Radio $r$              & $[10,\;30]$ px \\
+        Distancia $dcc$        & $[2.5r,\;4.5r]$ \\
+        Desorden en $r$, $dcc$ & hasta 10\% \\
+        Rotación de red        & $[0^\circ,\;360^\circ]$ \\
+        Brillo $B$             & $[-40,\;40]$ \\
+        Contraste $C$          & $[0.6,\;1.4]$ \\
+        Ruido                  & nivel 1 \\
+        \bottomrule
+        \end{tabular}
+
+    \end{block} 
+
+    \begin{center}
+        \begin{tcolorbox}[
+        colback=C3,
+        colframe=C2,
+        boxrule=1pt,
+        arc=6pt,              % redondeo de bordes
+        width=1.5\linewidth, % ancho del box
+        left=6pt, right=6pt,
+        top=4pt, bottom=4pt,
+        boxsep=2pt,
+        center                % centra el box
+        ]
+        \small
+        Se generaron \textbf{20\,000 imágenes} de $300\times300$ px. Cada imagen genera una fila en el CSV con variables: 
+        $R$, $\sigma_R$, $DCC$, $\sigma_{DCC}$, $P$.
+        \end{tcolorbox}        
+    \end{center}
+
+
+
+% ---- COLUMNA DERECHA (imágenes) ----
+\column{0.45\textwidth}
+    \centering
+
+    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
+    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
+
+    \vspace{0.3cm}
+
+    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
+    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
+
+\end{columns}
+
+   
+
+
 \end{frame}
+
+
+
+\section{Bloques y Cuadros}
 
 
 
