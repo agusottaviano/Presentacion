@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usepackage{booktabs}
 \usepackage{tcolorbox}
 
@@ -191,25 +192,55 @@
 
 
 % ============================================
-% SECCIÓN 3: COLUMNAS Y LAYOUTS
+% SECCIÓN 3: Normalización de las labels
 % ============================================
-\section{Columnas}
+\section{Normalización de las labels}
 
-\begin{frame}{Dos Columnas}
+\begin{frame}{Normalización de las labels}
     \begin{columns}[T]
         \column{0.5\textwidth}
-        Contenido de la columna izquierda
-        \begin{itemize}
-            \item Punto 1
-            \item Punto 2
-        \end{itemize}
+        \begin{block}{¿Por qué normalizar las labels?}
+            Las variables tienen escalas muy distintas: $R \sim 20$ \, px pero  $P \sim 0.3$.Sin normalizar, las variables grandes dominan el MAE y el modelo aprende mal.
+        \end{block}
+
+        \begin{exampleblock}{StandardScaler}
+            Técnica de normalización que transforma las variables:
+            $$
+                x_{norm} = \frac{x - \mu}{\sigma}
+            $$
+            donde $\mu$ es la media y $\sigma$ es la desviación estándar.
+            
+            \textbf{Resultado:} variables con media 0 y desviación estándar 1.
+        \end{exampleblock}
         
         \column{0.5\textwidth}
-        Contenido de la columna derecha
-        \begin{itemize}
-            \item Punto A
-            \item Punto B
-        \end{itemize}
+    
+        \begin{center}
+            \begin{tikzpicture}[node distance=1cm, >=stealth]
+                
+                % Nodo 1
+                \node[draw, rounded corners, fill=C3, minimum width=3cm, minimum height=0.7cm] (inicio)
+                    {CSV Original $\rightarrow$ ($R$, $\sigma_R$, $DCC$, $\sigma_{DCC}$, $P$)};
+                
+                % Nodo 2
+                \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of inicio] (paso1)
+                    {Paso 1};
+                
+                % Nodo 3
+                \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of paso1] (paso2)
+                    {Paso 2};
+                
+                % Nodo 4
+                \node[draw, rounded corners, fill=CA!30, minimum width=3cm, minimum height=0.7cm, below=of paso2] (fin)
+                    {Fin};
+                
+                % Flechas
+                \draw[->, thick, color=C2] (inicio) -- (paso1);
+                \draw[->, thick, color=C2] (paso1) -- (paso2);
+                \draw[->, thick, color=C2] (paso2) -- (fin);
+                
+            \end{tikzpicture}
+        \end{center}
     \end{columns}
 \end{frame}
 
@@ -238,16 +269,35 @@
 % ============================================
 \section{Figuras}
 
-\begin{frame}{Insertar Imágenes}
+\begin{frame}{Diagrama de Flujo Simple}
 
     \begin{center}
-        \includegraphics[width=0.5\textwidth]{Imagenes/ImagenAAO.png}
-        
+        \begin{tikzpicture}[node distance=1.5cm, >=stealth]
+            
+            % Nodo 1
+            \node[draw, rounded corners, fill=C3, minimum width=3cm, minimum height=0.7cm] (inicio)
+                {Inicio};
+            
+            % Nodo 2
+            \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of inicio] (paso1)
+                {Paso 1};
+            
+            % Nodo 3
+            \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of paso1] (paso2)
+                {Paso 2};
+            
+            % Nodo 4
+            \node[draw, rounded corners, fill=CA!30, minimum width=3cm, minimum height=0.7cm, below=of paso2] (fin)
+                {Fin};
+            
+            % Flechas
+            \draw[->, thick, color=C2] (inicio) -- (paso1);
+            \draw[->, thick, color=C2] (paso1) -- (paso2);
+            \draw[->, thick, color=C2] (paso2) -- (fin);
+            
+        \end{tikzpicture}
     \end{center}
 
-    
-    
-    
 \end{frame}
 
 % ============================================
