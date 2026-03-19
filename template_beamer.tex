@@ -199,7 +199,7 @@
 \begin{frame}{Normalización de las labels}
     \begin{columns}[T]
         \column{0.5\textwidth}
-        \begin{block}{¿Por qué normalizar las labels?}
+        \begin{block}{Se normalizan las labels}
             Las variables tienen escalas muy distintas: $R \sim 20$ \, px pero  $P \sim 0.3$.Sin normalizar, las variables grandes dominan el MAE y el modelo aprende mal.
         \end{block}
 
@@ -214,33 +214,8 @@
         \end{exampleblock}
         
         \column{0.5\textwidth}
-    
-        \begin{center}
-            \begin{tikzpicture}[node distance=1cm, >=stealth]
-                
-                % Nodo 1
-                \node[draw, rounded corners, fill=C3, minimum width=3cm, minimum height=0.7cm] (inicio)
-                    {CSV Original $\rightarrow$ ($R$, $\sigma_R$, $DCC$, $\sigma_{DCC}$, $P$)};
-                
-                % Nodo 2
-                \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of inicio] (paso1)
-                    {Paso 1};
-                
-                % Nodo 3
-                \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of paso1] (paso2)
-                    {Paso 2};
-                
-                % Nodo 4
-                \node[draw, rounded corners, fill=CA!30, minimum width=3cm, minimum height=0.7cm, below=of paso2] (fin)
-                    {Fin};
-                
-                % Flechas
-                \draw[->, thick, color=C2] (inicio) -- (paso1);
-                \draw[->, thick, color=C2] (paso1) -- (paso2);
-                \draw[->, thick, color=C2] (paso2) -- (fin);
-                
-            \end{tikzpicture}
-        \end{center}
+        CSV Original $\rightarrow$ ($R$, $\sigma_R$, $DCC$, $\sigma_{DCC}$, $P$)
+        
     \end{columns}
 \end{frame}
 
