@@ -70,16 +70,6 @@
     \tableofcontents
 \end{frame}
 
-% ============================================
-% SECCIÓN 1: DIAPOSITIVAS BÁSICAS
-% ============================================
-\section{Diapositivas Básicas}
-
-\begin{frame}{Diapositiva Simple}
-
-
-
-\end{frame}
 
 \begin{frame}{El problema: Medir la geometría de los poros}
     \begin{columns}[T]
@@ -98,7 +88,7 @@
             \begin{tabular}{@{}lll@{}}
               $R$,\;$\sigma_R$       & Radio promedio y dispersión [px] \\
               $DCC$,\;$\sigma_{DCC}$ & Distancia centro a centro [px] \\
-              $P$                    & Porosidad (\%)                  \\
+              $P$                    & Porosidad (\text{\%})                  \\
             \end{tabular}
         \end{alertblock}
 
@@ -136,7 +126,7 @@
         \midrule
         Radio $r$              & $[10,\;30]$ px \\
         Distancia $dcc$        & $[2.5r,\;4.5r]$ \\
-        Desorden en $r$, $dcc$ & hasta 10\% \\
+        Desorden en $r$, $dcc$ & hasta 10\text{\%} \\
         Rotación de red        & $[0^\circ,\;360^\circ]$ \\
         Brillo $B$             & $[-40,\;40]$ \\
         Contraste $C$          & $[0.6,\;1.4]$ \\
@@ -151,12 +141,12 @@
         colback=C3,
         colframe=C2,
         boxrule=1pt,
-        arc=6pt,              % redondeo de bordes
-        width=1.5\linewidth, % ancho del box
+        arc=6pt,
+        width=1.4\textwidth,
         left=6pt, right=6pt,
         top=4pt, bottom=4pt,
         boxsep=2pt,
-        center                % centra el box
+        center
         ]
         \small
         Se generaron \textbf{20\,000 imágenes} de $300\times300$ px. Cada imagen genera una fila en el CSV con variables: 
@@ -170,13 +160,13 @@
 \column{0.45\textwidth}
     \centering
 
-    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
-    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
+    \includegraphics[width=0.45\textwidth]{Imagenes/generada1.jpg}
+    \includegraphics[width=0.45\textwidth]{Imagenes/generada2.jpg}
 
     \vspace{0.3cm}
 
-    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
-    \includegraphics[width=0.45\textwidth]{Imagenes/ImagenAAO.png}
+    \includegraphics[width=0.45\textwidth]{Imagenes/generada3.jpg}
+    \includegraphics[width=0.45\textwidth]{Imagenes/generada4.jpg}
 
 \end{columns}
 
@@ -185,108 +175,163 @@
 
 \end{frame}
 
-
-
-\section{Bloques y Cuadros}
-
-
-
 % ============================================
 % SECCIÓN 3: Normalización de las labels
 % ============================================
 \section{Normalización de las labels}
 
-\begin{frame}{Normalización de las labels}
+\begin{frame}{Normalización de las Labels}
     \begin{columns}[T]
-        \column{0.5\textwidth}
-        \begin{block}{Se normalizan las labels}
-            Las variables tienen escalas muy distintas: $R \sim 20$ \, px pero  $P \sim 0.3$.Sin normalizar, las variables grandes dominan el MAE y el modelo aprende mal.
+        \column{0.4\textwidth}
+        
+        \begin{block}{Por qué normalizar}
+            Las variables tienen escalas muy distintas: $R \sim 20$ \, px pero  $P \sim 0.3$. Sin normalizar, las variables grandes dominan el MAE y el modelo aprende mal.
         \end{block}
 
         \begin{exampleblock}{StandardScaler}
-            Técnica de normalización que transforma las variables:
-            $$
-                x_{norm} = \frac{x - \mu}{\sigma}
-            $$
-            donde $\mu$ es la media y $\sigma$ es la desviación estándar.
+            Técnica que transforma las variables:
+            $$x_{norm} = \frac{x - \mu}{\sigma}$$
+            donde $\mu$ es media y $\sigma$ es desviación estándar.
             
-            \textbf{Resultado:} variables con media 0 y desviación estándar 1.
+            \textbf{Resultado:} media 0 y desv. est. 1.
         \end{exampleblock}
         
-        \column{0.5\textwidth}
-        CSV Original $\rightarrow$ ($R$, $\sigma_R$, $DCC$, $\sigma_{DCC}$, $P$)
+        \column{0.45\textwidth}
         
+        \begin{exampleblock}{Transformación Inversa}
+            Despejar $x$ de la ecuación:
+            $$x = x_{norm} \cdot \sigma + \mu$$
+            
+            \textbf{Importante:} Los valores de $\mu$ y $\sigma$ se guardan.
+        \end{exampleblock}
+        
+        \begin{block}{Flujo del proceso}
+            \small
+            \begin{enumerate}
+                \item CSV Original con 5 variables
+                \item Aplicar StandardScaler
+                \item Guardar scaler
+                \item Labels listas para entrenar
+                \item Entrenar la red neuronal
+                \item Usar Scaler Inverso para obtener MAPE
+            \end{enumerate}
+        \end{block}
     \end{columns}
 \end{frame}
 
 % ============================================
-% SECCIÓN 4: MATEMÁTICAS
+% SECCIÓN 4: PIPELINE DE ENTRENAMIENTO
 % ============================================
-\section{Ecuaciones}
+\section{Pipeline de Entrenamiento}
 
-\begin{frame}{Ecuaciones Matemáticas}
-    Una ecuación inline: $E = mc^2$
+\begin{frame}{Transformación de Imágenes}
+    \begin{block}{Valores originales}
+        Las imágenes SEM vienen con píxeles en rango $[0, 255]$.
+    \end{block}
     
-    Una ecuación en modo destaque:
-    \[
-        \int_0^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-    \]
+    \begin{exampleblock}{Normalización de píxeles}
+        Se transforman a uno de estos rangos:
+        \begin{itemize}
+            \item Rango $[0, 1]$: dividir por 255
+            \item Rango $[-1, 1]$: normalizar a media 0 y desv. est. 1
+            \item Mantener $[0, 255]$: sin transformación
+        \end{itemize}
+    \end{exampleblock}
     
-    Sistema de ecuaciones:
-    \begin{align*}
-        a + b &= c \\
-        d - e &= f
-    \end{align*}
+    \begin{alertblock}{Por qué}
+        Facilita convergencia del modelo y evita dominancia numérica de valores grandes.
+    \end{alertblock}
 \end{frame}
 
-% ============================================
-% SECCIÓN 5: IMÁGENES Y FIGURAS
-% ============================================
-\section{Figuras}
-
-\begin{frame}{Diagrama de Flujo Simple}
-
-    \begin{center}
-        \begin{tikzpicture}[node distance=1.5cm, >=stealth]
-            
-            % Nodo 1
-            \node[draw, rounded corners, fill=C3, minimum width=3cm, minimum height=0.7cm] (inicio)
-                {Inicio};
-            
-            % Nodo 2
-            \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of inicio] (paso1)
-                {Paso 1};
-            
-            % Nodo 3
-            \node[draw, rounded corners, fill=C2!30, minimum width=3cm, minimum height=0.7cm, below=of paso1] (paso2)
-                {Paso 2};
-            
-            % Nodo 4
-            \node[draw, rounded corners, fill=CA!30, minimum width=3cm, minimum height=0.7cm, below=of paso2] (fin)
-                {Fin};
-            
-            % Flechas
-            \draw[->, thick, color=C2] (inicio) -- (paso1);
-            \draw[->, thick, color=C2] (paso1) -- (paso2);
-            \draw[->, thick, color=C2] (paso2) -- (fin);
-            
-        \end{tikzpicture}
-    \end{center}
-
+\begin{frame}{División del Dataset}
+    \begin{block}{Partición}
+        Las 20\,000 imágenes se dividen en:
+        \begin{itemize}
+            \item \textbf{Train Set}: entrena el modelo
+            \item \textbf{Validation Set}: valida en cada época
+            \item \textbf{Test Set}: evalúa al final
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Batching}
+        Las imágenes se agrupan en lotes para:
+        \begin{itemize}
+            \item Optimizar memoria GPU/CPU
+            \item Acelerar entrenamiento
+            \item Mejorar estabilidad numérica
+        \end{itemize}
+    \end{block}
 \end{frame}
 
-% ============================================
-% SECCIÓN 6: LISTAS NUMERADAS Y CÓDIGO
-% ============================================
-\section{Listas Numeradas}
+\begin{frame}{Entrenamiento del Modelo}
+    \begin{block}{Arquitectura}
+        Dos opciones:
+        \begin{itemize}
+            \item \textbf{CNN Completa}: red convolucional entrenada desde cero
+            \item \textbf{Transfer Learning}: últimas capas convolucionales de modelo preentrenado
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Datos de entrada}
+        \begin{itemize}
+            \item Imágenes: transformadas a $[0,1]$, $[-1,1]$ o $[0,255]$
+            \item Labels: normalizados con StandardScaler (guardado en \texttt{scaler.pkl})
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Proceso}
+        Minimizar pérdida en Train Set validando en cada época.
+    \end{block}
+\end{frame}
 
-\begin{frame}{Listas Numeradas}
-    Pasos a seguir:
-    \begin{enumerate}
-        \item Primer paso
-        \item Segundo paso
-        \item Tercer paso
-    \end{enumerate}
+\begin{frame}{Obtención del MAPE en Test Set}
+    \begin{block}{Paso 1: Predicciones}
+        El modelo entrenado realiza predicciones en Test Set:
+        $$ \text{Modelo}(x_{imagen}) = (\hat{R}_{norm}, \hat{\sigma_R}_{norm}, \hat{DCC}_{norm}, \hat{\sigma_{DCC}}_{norm}, \hat{P}_{norm}) $$
+    \end{block}
+    
+    \begin{block}{Paso 2: Scaler Inverso}
+        Recuperar labels al espacio original usando \texttt{scaler.pkl}:
+        $$(\hat{R}, \hat{\sigma_R}, \hat{DCC}, \hat{\sigma_{DCC}}, \hat{P}) = \text{scaler.inverse\_transform}(\hat{R}_{norm}, \hat{\sigma_R}_{norm}, \ldots)$$
+    \end{block}
+    
+    \begin{exampleblock}{Paso 3: Calcular MAPE}
+        $$\text{MAPE} = \frac{1}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right| \times 100\text{\%}$$
+        donde $y_i$ son los labels reales del Test Set.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Evaluación en Dataset Externo Real}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        
+        \begin{alertblock}{Datos externos}
+            Dataset de imágenes SEM \textbf{reales} (no simuladas) para evaluar generalización.
+        \end{alertblock}
+        
+        \begin{block}{Función: evaluate\_external\_dataset}
+            \begin{enumerate}
+                \item Cargar imágenes SEM reales
+                \item Aplicar misma transformación de píxeles
+                \item Realizar predicciones con modelo entrenado
+                \item Aplicar Scaler Inverso (\texttt{scaler.pkl})
+                \item Calcular MAPE
+            \end{enumerate}
+        \end{block}
+        
+        \begin{exampleblock}{Resultado}
+            MAPE en datos reales indica rendimiento en datos no vistos.
+        \end{exampleblock}
+        
+        \column{0.5\textwidth}
+        
+        \begin{center}
+            \includegraphics[width=0.9\textwidth]{Imagenes/ImagenSEM.png}
+            
+            \small Imagen SEM real
+        \end{center}
+        
+    \end{columns}
 \end{frame}
 
 % ============================================
