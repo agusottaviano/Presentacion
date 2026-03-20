@@ -1,4 +1,5 @@
 \babel@toc {spanish}{}\relax 
-\beamer@sectionintoc {1}{Generación del Dataset Simulado}{4}{0}{1}
-\beamer@sectionintoc {2}{Normalización de las labels}{5}{0}{2}
-\beamer@sectionintoc {3}{Pipeline de Entrenamiento}{6}{0}{3}
+\beamer@sectionintoc {1}{Motivación}{3}{0}{1}
+\beamer@sectionintoc {2}{Generación del Dataset Simulado}{4}{0}{2}
+\beamer@sectionintoc {3}{Normalización de las labels}{5}{0}{3}
+\beamer@sectionintoc {4}{Pipeline de Entrenamiento}{6}{0}{4}

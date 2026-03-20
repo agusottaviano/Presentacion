@@ -70,6 +70,10 @@
     \tableofcontents
 \end{frame}
 
+% ============================================
+% SECCIÓN 1: Motivación
+% ============================================
+\section{Motivación}
 
 \begin{frame}{El problema: Medir la geometría de los poros}
     \begin{columns}[T]
@@ -85,10 +89,10 @@
 
         \begin{alertblock}{5 variables objetivo}
             \renewcommand{\arraystretch}{1.25}
-            \begin{tabular}{@{}lll@{}}
+            \begin{tabular}{@{}ll@{}}
               $R$,\;$\sigma_R$       & Radio promedio y dispersión [px] \\
               $DCC$,\;$\sigma_{DCC}$ & Distancia centro a centro [px] \\
-              $P$                    & Porosidad (\text{\%})                  \\
+              $P$                    & Porosidad (\%) \\
             \end{tabular}
         \end{alertblock}
 
@@ -126,7 +130,7 @@
         \midrule
         Radio $r$              & $[10,\;30]$ px \\
         Distancia $dcc$        & $[2.5r,\;4.5r]$ \\
-        Desorden en $r$, $dcc$ & hasta 10\text{\%} \\
+        Desorden en $r$, $dcc$ & hasta $10\%$ \\
         Rotación de red        & $[0^\circ,\;360^\circ]$ \\
         Brillo $B$             & $[-40,\;40]$ \\
         Contraste $C$          & $[0.6,\;1.4]$ \\
@@ -213,7 +217,7 @@
                 \item Guardar scaler
                 \item Labels listas para entrenar
                 \item Entrenar la red neuronal
-                \item Usar Scaler Inverso para obtener MAPE
+                \item Evaluar la red neuronal y usar Scaler Inverso para obtener MAPE
             \end{enumerate}
         \end{block}
     \end{columns}
@@ -233,12 +237,12 @@
         Se transforman a uno de estos rangos:
         \begin{itemize}
             \item Rango $[0, 1]$: dividir por 255
-            \item Rango $[-1, 1]$: normalizar a media 0 y desv. est. 1
+            \item Rango $[-1, 1]$: dividir por 127.5 y restar 1
             \item Mantener $[0, 255]$: sin transformación
         \end{itemize}
     \end{exampleblock}
     
-    \begin{alertblock}{Por qué}
+    \begin{alertblock}{¿Por qué?}
         Facilita convergencia del modelo y evita dominancia numérica de valores grandes.
     \end{alertblock}
 \end{frame}
@@ -258,7 +262,6 @@
         \begin{itemize}
             \item Optimizar memoria GPU/CPU
             \item Acelerar entrenamiento
-            \item Mejorar estabilidad numérica
         \end{itemize}
     \end{block}
 \end{frame}
@@ -267,8 +270,8 @@
     \begin{block}{Arquitectura}
         Dos opciones:
         \begin{itemize}
-            \item \textbf{CNN Completa}: red convolucional entrenada desde cero
-            \item \textbf{Transfer Learning}: últimas capas convolucionales de modelo preentrenado
+            \item \textbf{CNN Completa}: Arquitectura de una red convolucional entrenada desde cero
+            \item \textbf{Transfer Learning}: Se utilizan capas de un modelo preentrenado y se le agregan capas convolucionales al final que son entrenadas acordes a lo que se necesita predecir. 
         \end{itemize}
     \end{block}
     
@@ -287,12 +290,12 @@
 \begin{frame}{Obtención del MAPE en Test Set}
     \begin{block}{Paso 1: Predicciones}
         El modelo entrenado realiza predicciones en Test Set:
-        $$ \text{Modelo}(x_{imagen}) = (\hat{R}_{norm}, \hat{\sigma_R}_{norm}, \hat{DCC}_{norm}, \hat{\sigma_{DCC}}_{norm}, \hat{P}_{norm}) $$
+        $$ \text{Modelo}(x_{\text{img}}) = \bigl(\hat{R}_{\text{norm}},\; \hat{\sigma}_{R,\text{norm}},\; \hat{DCC}_{\text{norm}},\; \hat{\sigma}_{DCC,\text{norm}},\; \hat{P}_{\text{norm}}\bigr) $$
     \end{block}
     
     \begin{block}{Paso 2: Scaler Inverso}
         Recuperar labels al espacio original usando \texttt{scaler.pkl}:
-        $$(\hat{R}, \hat{\sigma_R}, \hat{DCC}, \hat{\sigma_{DCC}}, \hat{P}) = \text{scaler.inverse\_transform}(\hat{R}_{norm}, \hat{\sigma_R}_{norm}, \ldots)$$
+        $$(\hat{R},\; \hat{\sigma}_R,\; \hat{DCC},\; \hat{\sigma}_{DCC},\; \hat{P}) = \text{scaler.inverse\_transform}(\hat{R}_{\text{norm}},\; \hat{\sigma}_{R,\text{norm}},\; \ldots)$$
     \end{block}
     
     \begin{exampleblock}{Paso 3: Calcular MAPE}
@@ -301,49 +304,112 @@
     \end{exampleblock}
 \end{frame}
 
+% --- Slide 1: Presentación del dataset externo ---
 \begin{frame}{Evaluación en Dataset Externo Real}
     \begin{columns}[T]
         \column{0.5\textwidth}
-        
-        \begin{alertblock}{Datos externos}
-            Dataset de imágenes SEM \textbf{reales} (no simuladas) para evaluar generalización.
-        \end{alertblock}
-        
-        \begin{block}{Función: evaluate\_external\_dataset}
-            \begin{enumerate}
-                \item Cargar imágenes SEM reales
-                \item Aplicar misma transformación de píxeles
-                \item Realizar predicciones con modelo entrenado
-                \item Aplicar Scaler Inverso (\texttt{scaler.pkl})
-                \item Calcular MAPE
-            \end{enumerate}
+
+        \begin{block}{Dataset externo}
+            Se utilizaron \textbf{24 imágenes SEM reales} (no simuladas) con sus parámetros geométricos medidos manualmente para evaluar la generalización del modelo.
         \end{block}
-        
-        \begin{exampleblock}{Resultado}
-            MAPE en datos reales indica rendimiento en datos no vistos.
+
+        \begin{alertblock}{Objetivo}
+            Verificar si el modelo entrenado con imágenes simuladas es capaz de predecir correctamente los parámetros de imágenes reales.
+        \end{alertblock}
+
+        \begin{exampleblock}{Métrica}
+            MAPE sobre $R$, $DCC$ y $P$ en espacio real (unidades originales).
         \end{exampleblock}
-        
+
         \column{0.5\textwidth}
-        
+
         \begin{center}
             \includegraphics[width=0.9\textwidth]{Imagenes/ImagenSEM.png}
-            
-            \small Imagen SEM real
+
+            \small Imagen SEM real con banda de metadatos
         \end{center}
-        
+
     \end{columns}
+\end{frame}
+
+% --- Slide 2: Desafíos, solución y pipeline ---
+\begin{frame}{Evaluación en Dataset Externo Real: Pipeline}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+
+        \begin{alertblock}{Desafíos de las imágenes SEM reales}
+            \begin{enumerate}
+                \item Las imágenes tienen resolución mas grande a la utilizada en el entrenamiento.
+                \item Las imágenes suelen incluir una franja impresa con parámetros del microscopio (escala, voltaje, etc.).
+            \end{enumerate}
+        \end{alertblock}
+
+        \begin{block}{Solución: crop por esquina}
+            El CSV incluye una columna \texttt{crop\_corner} por imagen que indica desde qué esquina recortar (\texttt{tl/tr/bl/br/center}), permitiendo elegir manualmente una región de $300\times300$ px libre de la banda con parámetros.
+        \end{block}
+
+        \column{0.45\textwidth}
+
+        \begin{exampleblock}{Pipeline de evaluación}
+            \small
+            \begin{enumerate}
+                \item Leer labels en espacio real (sin estandarizar)
+                \item Recortar cada imagen a $300\times300$ px sin franja de parámetros
+                \item Normalizar píxeles igual que en el entrenamiento
+                \item Obtener predicciones y convertirlas al espacio real
+                \item Calcular MAPE sobre $R$, $DCC$, $P$
+            \end{enumerate}
+        \end{exampleblock}
+
+        \begin{block}{Nota}
+            Las labels del CSV están en espacio real: el scaler solo se aplica a las predicciones para invertirlas al mismo espacio.
+        \end{block}
+
+    \end{columns}
+\end{frame}
+
+% ============================================
+% Resultados
+% ============================================
+
+\begin{frame}{Evaluación en Dataset Externo Real: Resultados}
+
+    \begin{columns}[T]
+        \column{0.30\textwidth}
+        \begin{exampleblock}{MAPE — 24 imágenes SEM}
+            \renewcommand{\arraystretch}{0.9}
+            \begin{tabular}{@{}lc@{}}
+            \toprule
+            Variable & MAPE \\
+            \midrule
+            Radio $R$       & $11.00\%$ \\
+            Distancia $DCC$ & $11.53\%$ \\
+            Porosidad $P$   & $20.51\%$ \\
+            \bottomrule
+            \end{tabular}
+        \end{exampleblock}
+
+        \column{0.6\textwidth}
+        \begin{block}{Conclusión}
+            El modelo es aceptable: la mayoría de las imágenes presentan errores por debajo del $20\%$.
+        \end{block}
+    \end{columns}
+
+    \vspace{0.1cm}
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{Imagenes/resultados_conv.png}
+    \end{center}
+
 \end{frame}
 
 % ============================================
 % DIAPOSITIVA FINAL
 % ============================================
+
 \begin{frame}[plain]
     \begin{center}
         {\Large \textbf{¡Gracias!}}
         
-        \vspace{1cm}
-        
-        Preguntas e inquietudes
     \end{center}
 \end{frame}
 

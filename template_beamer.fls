@@ -454,6 +454,11 @@ INPUT ./Imagenes/ImagenSEM.png
 INPUT ./Imagenes/ImagenSEM.png
 INPUT ./Imagenes/ImagenSEM.png
 INPUT ./Imagenes/ImagenSEM.png
+INPUT ./Imagenes/resultados_conv.png
+INPUT ./Imagenes/resultados_conv.png
+INPUT ./Imagenes/resultados_conv.png
+INPUT ./Imagenes/resultados_conv.png
+INPUT ./Imagenes/resultados_conv.png
 OUTPUT template_beamer.nav
 OUTPUT template_beamer.toc
 OUTPUT template_beamer.snm
@@ -461,7 +466,9 @@ INPUT template_beamer.aux
 INPUT ./template_beamer.out
 INPUT ./template_beamer.out
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
