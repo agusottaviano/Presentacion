@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.4)  20 MAR 2026 19:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.4)  22 MAR 2026 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -897,10 +897,10 @@ Overfull \vbox (0.45145pt too high) detected at line 224
 [9
 
 ]
-<Imagenes/ImagenSEM.png, id=414, 1027.84pt x 770.88pt>
+<Imagenes/ImagenSEM.png, id=412, 1027.84pt x 770.88pt>
 File: Imagenes/ImagenSEM.png Graphic file (type png)
 <use Imagenes/ImagenSEM.png>
-Package pdftex.def Info: Imagenes/ImagenSEM.png  used on input line 333.
+Package pdftex.def Info: Imagenes/ImagenSEM.png  used on input line 334.
 (pdftex.def)             Requested size: 195.85849pt x 146.89218pt.
 
 
@@ -911,10 +911,10 @@ Package pdftex.def Info: Imagenes/ImagenSEM.png  used on input line 333.
 [11
 
 ]
-<Imagenes/resultados_conv.png, id=505, 1076.823pt x 354.123pt>
+<Imagenes/resultados_conv.png, id=504, 1076.823pt x 354.123pt>
 File: Imagenes/resultados_conv.png Graphic file (type png)
 <use Imagenes/resultados_conv.png>
-Package pdftex.def Info: Imagenes/resultados_conv.png  used on input line 403.
+Package pdftex.def Info: Imagenes/resultados_conv.png  used on input line 404.
 (pdftex.def)             Requested size: 348.19656pt x 114.50502pt.
 
 
@@ -946,18 +946,18 @@ Package rerunfilecheck Info: File `template_beamer.out' has not changed.
 (rerunfilecheck)             Checksum: 7C0E9BF6CC160FCE25E705CCD0FB6196;670.
  ) 
 Here is how much of TeX's memory you used:
- 28804 strings out of 467888
- 586191 string characters out of 5438241
- 965176 words of memory out of 5000000
- 56791 multiletter control sequences out of 15000+600000
- 637289 words of font info for 78 fonts, out of 8000000 for 9000
+ 28802 strings out of 467888
+ 586176 string characters out of 5438241
+ 965175 words of memory out of 5000000
+ 56790 multiletter control sequences out of 15000+600000
+ 637121 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,433b,1209s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb>
-Output written on template_beamer.pdf (13 pages, 1857154 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb>
+Output written on template_beamer.pdf (13 pages, 1846082 bytes).
 PDF statistics:
- 605 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
+ 600 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
  31 named destinations out of 1000 (max. 500000)
  1196 words of extra memory for PDF output out of 10000 (max. 10000000)
 

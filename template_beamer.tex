@@ -194,8 +194,8 @@
 
         \begin{exampleblock}{StandardScaler}
             Técnica que transforma las variables:
-            $$x_{norm} = \frac{x - \mu}{\sigma}$$
-            donde $\mu$ es media y $\sigma$ es desviación estándar.
+            $$x_{\text{norm}} = \frac{x - \mu}{\sigma}$$
+            donde $\mu$ y $\sigma$ son la media y la desviación estándar de cada variable, respectivamente.
             
             \textbf{Resultado:} media 0 y desv. est. 1.
         \end{exampleblock}
@@ -278,7 +278,7 @@
     \begin{block}{Datos de entrada}
         \begin{itemize}
             \item Imágenes: transformadas a $[0,1]$, $[-1,1]$ o $[0,255]$
-            \item Labels: normalizados con StandardScaler (guardado en \texttt{scaler.pkl})
+            \item Labels: normalizados con StandardScaler
         \end{itemize}
     \end{block}
     
@@ -294,13 +294,14 @@
     \end{block}
     
     \begin{block}{Paso 2: Scaler Inverso}
-        Recuperar labels al espacio original usando \texttt{scaler.pkl}:
+        El modelo entrega predicciones en el espacio normalizado por lo que lo desnormalizamos:
         $$(\hat{R},\; \hat{\sigma}_R,\; \hat{DCC},\; \hat{\sigma}_{DCC},\; \hat{P}) = \text{scaler.inverse\_transform}(\hat{R}_{\text{norm}},\; \hat{\sigma}_{R,\text{norm}},\; \ldots)$$
     \end{block}
     
     \begin{exampleblock}{Paso 3: Calcular MAPE}
+        Calculamos MAPE para cada una de las variables en el Test Set:
         $$\text{MAPE} = \frac{1}{n}\sum_{i=1}^{n}\left|\frac{y_i - \hat{y}_i}{y_i}\right| \times 100\text{\%}$$
-        donde $y_i$ son los labels reales del Test Set.
+        donde $y_i$ son los labels reales del Test Set y $\hat{y}_i$ las predicciones.
     \end{exampleblock}
 \end{frame}
 
