@@ -39,6 +39,17 @@
 % === ELIMINAR BARRA DE NAVEGACIÓN ===
 \setbeamertemplate{navigation symbols}{}
 
+% === PIE DE PÁGINA: SOLO NÚMERO DE FILMINA ===
+\setbeamertemplate{footline}{
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
 % === TAMAÑOS DE FUENTES ===
 \setbeamerfont{frametitle}{size=\large, series=\bfseries}
 \setbeamerfont{title}{size=\Large, series=\bfseries}
@@ -47,10 +58,12 @@
 \setbeamerfont{itemize/enumerate body}{size=\normalsize}
 
 % === INFORMACIÓN DEL DOCUMENTO ===
-\title{Mi Primera Presentación}
-\subtitle{Un template básico de Beamer}
-\author{Tu Nombre}
-\institute{Tu Institución}
+\title{Inteligencia Artificial para la Predicción
+Automática de Parámetros Geométricos
+en Moldes Nanoestructurados}
+\subtitle{}
+\author{Agustín Ottaviano \\ \small Director: Fernando Meneses}
+\institute{Universidad Nacional de Córdoba}
 \date{\today}
 
 % === LOGO (OPCIONAL) ===
@@ -117,28 +130,9 @@
 
 
 \begin{columns}[t] % alineación arriba
-    \column{0.32\textwidth}
 
-% ---- COLUMNA IZQUIERDA (tabla) ----
-
-    \begin{block}{Parámetros aleatorios por imagen}
-
-        \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{@{}ll@{}}
-        \toprule
-        Parámetro & Rango \\
-        \midrule
-        Radio $r$              & $[10,\;30]$ px \\
-        Distancia $dcc$        & $[2.5r,\;4.5r]$ \\
-        Desorden en $r$, $dcc$ & hasta $10\%$ \\
-        Rotación de red        & $[0^\circ,\;360^\circ]$ \\
-        Brillo $B$             & $[-40,\;40]$ \\
-        Contraste $C$          & $[0.6,\;1.4]$ \\
-        Ruido                  & nivel 1 \\
-        \bottomrule
-        \end{tabular}
-
-    \end{block} 
+% ---- COLUMNA IZQUIERDA (imágenes) ----
+\column{0.25\textwidth}
 
     \begin{center}
         \begin{tcolorbox}[
@@ -158,10 +152,6 @@
         \end{tcolorbox}        
     \end{center}
 
-
-
-% ---- COLUMNA DERECHA (imágenes) ----
-\column{0.45\textwidth}
     \centering
 
     \includegraphics[width=0.45\textwidth]{Imagenes/generada1.jpg}
@@ -170,7 +160,26 @@
     \vspace{0.3cm}
 
     \includegraphics[width=0.45\textwidth]{Imagenes/generada3.jpg}
-    \includegraphics[width=0.45\textwidth]{Imagenes/generada4.jpg}
+    \includegraphics[width=0.45\textwidth]{Imagenes/generada4.jpg}    
+    \column{0.60\textwidth}
+
+% ---- COLUMNA DERECHA (tabla) ----
+
+    \begin{block}{Parámetros aleatorios por imagen}
+        \small
+        \begin{itemize}
+            \item \textbf{Radio} $r \in [10,30]$ px: tamaño promedio de los poros en la imagen simulada.
+            \item \textbf{Distancia centro a centro} $dcc \in [2.5r,\,4.5r]$: garantiza que no se solapen y cubre distintas densidades de poros.
+            \item \textbf{Desorden} en $r$ y $dcc$ (hasta $10\%$).
+            \item \textbf{Rotación} $\theta \in [0^\circ,360^\circ]$.
+            \item \textbf{Brillo} $B \in [-40,40]$: suma una constante a cada píxel, aclarando u oscureciendo la imagen.
+            \item \textbf{Contraste} $C \in [0.6,1.4]$: escala el rango de grises; $C<1$ reduce la diferencia entre poros y fondo, $C>1$ la aumenta.
+            \item \textbf{Ruido}: perturbación aleatoria pixel a pixel que simula el ruido electrónico del detector del microscopio.
+        \end{itemize}
+    \end{block} 
+
+
+
 
 \end{columns}
 
@@ -243,34 +252,51 @@
     \end{exampleblock}
     
     \begin{alertblock}{¿Por qué?}
-        Facilita convergencia del modelo y evita dominancia numérica de valores grandes.
+        Facilita la convergencia del modelo. Además, algunas arquitecturas de Transfer Learning (como VGG o ResNet) fueron entrenadas con imágenes en $[-1,1]$ o $[0,1]$, por lo que requieren esa misma normalización para funcionar correctamente.
     \end{alertblock}
 \end{frame}
 
 \begin{frame}{División del Dataset}
-    \begin{block}{Partición}
-        Las 20\,000 imágenes se dividen en:
+
+    \begin{block}{Partición de las 20\,000 imágenes}
+        \small
         \begin{itemize}
-            \item \textbf{Train Set}: entrena el modelo
-            \item \textbf{Validation Set}: valida en cada época
-            \item \textbf{Test Set}: evalúa al final
+            \item \textbf{Train Set} ($48\% \approx 9\,600$): el modelo ajusta sus pesos sobre este conjunto en cada época de entrenamiento.
+            \item \textbf{Validation Set} ($12\% \approx 2\,400$): se evalúa al final de cada época para monitorear el aprendizaje sin usarlo para ajustar pesos.
+            \item \textbf{Test Set} ($40\% \approx 8\,000$): se usa una única vez al final para reportar el desempeño real del modelo.
         \end{itemize}
     \end{block}
-    
-    \begin{block}{Batching}
-        Las imágenes se agrupan en lotes para:
+
+    \begin{center}
+    \begin{tikzpicture}[font=\small]
+        \fill[C1]  (0,0)    rectangle (4.80, 0.6);
+        \fill[C2]  (4.80,0) rectangle (6.00, 0.6);
+        \fill[CA]  (6.00,0) rectangle (10.0, 0.6);
+        \draw[gray!60] (0,0) rectangle (10.0, 0.6);
+        \node[white, font=\small\bfseries]      at (2.40, 0.30) {Train $48\%$};
+        \node[white, font=\scriptsize\bfseries] at (5.40, 0.30) {Val $12\%$};
+        \node[white, font=\small\bfseries]      at (8.00, 0.30) {Test $40\%$};
+        \node[font=\scriptsize, text=C1] at (2.40, -0.30) {$\approx\!9\,600$ imágenes};
+        \node[font=\scriptsize, text=C2] at (5.40, -0.30) {$\approx\!2\,400$};
+        \node[font=\scriptsize, text=CA] at (8.00, -0.30) {$\approx\!8\,000$ imágenes};
+    \end{tikzpicture}
+    \end{center}
+
+    \begin{block}{Entrenamiento}
+        \small
         \begin{itemize}
-            \item Optimizar memoria GPU/CPU
-            \item Acelerar entrenamiento
+            \item \textbf{Batch size} 32: en vez de actualizar los pesos de la red con una imagen a la vez, se acumulan 32 imágenes y se actualiza una sola vez. Reduce el ruido del aprendizaje y acelera el entrenamiento.
+            \item \textbf{Épocas}: máximo 150, pero con early stopping: si la pérdida en Validation Set no mejora durante 20 épocas consecutivas, el entrenamiento se detiene antes para evitar sobreajuste y ahorrar tiempo.
         \end{itemize}
     \end{block}
+
 \end{frame}
 
 \begin{frame}{Entrenamiento del Modelo}
     \begin{block}{Arquitectura}
         Dos opciones:
         \begin{itemize}
-            \item \textbf{CNN Completa}: Arquitectura de una red convolucional entrenada desde cero
+            \item \textbf{CNN Completa}: Arquitectura de una red convolucional entrenada desde cero.
             \item \textbf{Transfer Learning}: Se utilizan capas de un modelo preentrenado y se le agregan capas convolucionales al final que son entrenadas acordes a lo que se necesita predecir. 
         \end{itemize}
     \end{block}
@@ -282,9 +308,6 @@
         \end{itemize}
     \end{block}
     
-    \begin{block}{Proceso}
-        Minimizar pérdida en Train Set validando en cada época.
-    \end{block}
 \end{frame}
 
 \begin{frame}{Obtención del MAPE en Test Set}
@@ -294,7 +317,7 @@
     \end{block}
     
     \begin{block}{Paso 2: Scaler Inverso}
-        El modelo entrega predicciones en el espacio normalizado por lo que lo desnormalizamos:
+        Desnormalizamos las predicciones normalizadas aplicando la transformación inversa:
         $$(\hat{R},\; \hat{\sigma}_R,\; \hat{DCC},\; \hat{\sigma}_{DCC},\; \hat{P}) = \text{scaler.inverse\_transform}(\hat{R}_{\text{norm}},\; \hat{\sigma}_{R,\text{norm}},\; \ldots)$$
     \end{block}
     
@@ -327,7 +350,7 @@
         \begin{center}
             \includegraphics[width=0.9\textwidth]{Imagenes/ImagenSEM.png}
 
-            \small Imagen SEM real con banda de metadatos
+            \small Imagen SEM real con franja de parámetros
         \end{center}
 
     \end{columns}
@@ -345,8 +368,8 @@
             \end{enumerate}
         \end{alertblock}
 
-        \begin{block}{Solución: crop por esquina}
-            El CSV incluye una columna \texttt{crop\_corner} por imagen que indica desde qué esquina recortar (\texttt{tl/tr/bl/br/center}), permitiendo elegir manualmente una región de $300\times300$ px libre de la banda con parámetros.
+        \begin{block}{Solución: recorte por esquina}
+            Para cada imagen se seleccionó una esquina de $300\times300$ px libre de la franja de parámetros del microscopio.
         \end{block}
 
         \column{0.45\textwidth}
@@ -362,11 +385,14 @@
             \end{enumerate}
         \end{exampleblock}
 
-        \begin{block}{Nota}
-            Las labels del CSV están en espacio real: el scaler solo se aplica a las predicciones para invertirlas al mismo espacio.
-        \end{block}
+
 
     \end{columns}
+
+    \begin{block}{Nota}
+        Los parámetros reales de las imágenes SEM están en unidades originales. Las predicciones del modelo se desnormalizan antes de comparar, para que ambos estén en el mismo espacio.
+    \end{block}
+
 \end{frame}
 
 % ============================================
