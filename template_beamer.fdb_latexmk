@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1774261833.26726 "c:/Users/Agust/Desktop/GitHub/Presentacion/template_beamer.tex" "template_beamer.pdf" "template_beamer" 1774261835.88964 0
+["pdflatex"] 1774521837.00369 "c:/Users/Agust/Desktop/GitHub/Presentacion/template_beamer.tex" "template_beamer.pdf" "template_beamer" 1774521840.39401 0
   "Imagenes/ImagenAAO.png" 1773740795 869148 6cecaec6e1a5753aefbd0cf4b7f2db27 ""
   "Imagenes/ImagenSEM.png" 1773312012 391933 f1fce91334cd9ef24fafe6c957e1727a ""
   "Imagenes/generada1.jpg" 1770441675 39145 4146024fae07e957cd2fdb2be35d6baf ""
@@ -7,7 +7,7 @@
   "Imagenes/generada3.jpg" 1770445940 40712 38ec0aeb7260301b7c2b4dd39410cc1a ""
   "Imagenes/generada4.jpg" 1770442269 39773 702218e359c155b66eac8559cc4abdef ""
   "Imagenes/resultados_conv.png" 1773997844 45824 dd4ead28578c563a5d1f8fc2c4f50796 ""
-  "c:/Users/Agust/Desktop/GitHub/Presentacion/template_beamer.tex" 1774261832 16961 25f9b3a9c0fab52c3de0bf56023edf4c ""
+  "c:/Users/Agust/Desktop/GitHub/Presentacion/template_beamer.tex" 1774521834 16961 630742645c3737f4b1796c12719656c0 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1751650849 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1751652541 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1751651810 1536 293044035fd171bb1d18cf655049b101 ""
@@ -235,11 +235,11 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1751659864 5569470 f263a82cf6bb394f5bc87b63f38b78df ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1751660154 3599670 4cfa6cd02a7b1c087ab6a53f67d5a67f ""
   "c:/texlive/2025/texmf.cnf" 1751659844 713 e69b156964470283e0530f5060668171 ""
-  "template_beamer.aux" 1774261835 3553 2f1691f94c1885c8edf059cf210ce302 "pdflatex"
-  "template_beamer.nav" 1774261835 2104 10614403b76bbba3d2c30a80179ed3fe "pdflatex"
-  "template_beamer.out" 1774261835 670 7c0e9bf6cc160fce25e705ccd0fb6196 "pdflatex"
-  "template_beamer.tex" 1774261832 16961 25f9b3a9c0fab52c3de0bf56023edf4c ""
-  "template_beamer.toc" 1774261835 270 58bd185b6d4851d940eb029d785dbf58 "pdflatex"
+  "template_beamer.aux" 1774521840 3553 2f1691f94c1885c8edf059cf210ce302 "pdflatex"
+  "template_beamer.nav" 1774521840 2104 10614403b76bbba3d2c30a80179ed3fe "pdflatex"
+  "template_beamer.out" 1774521840 670 7c0e9bf6cc160fce25e705ccd0fb6196 "pdflatex"
+  "template_beamer.tex" 1774521834 16961 630742645c3737f4b1796c12719656c0 ""
+  "template_beamer.toc" 1774521840 270 58bd185b6d4851d940eb029d785dbf58 "pdflatex"
   (generated)
   "template_beamer.aux"
   "template_beamer.log"

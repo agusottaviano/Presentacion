@@ -261,8 +261,8 @@ en Moldes Nanoestructurados}
     \begin{block}{Partición de las 20\,000 imágenes}
         \small
         \begin{itemize}
-            \item \textbf{Train Set} ($48\% \approx 9\,600$): el modelo ajusta sus pesos sobre este conjunto en cada época de entrenamiento.
-            \item \textbf{Validation Set} ($12\% \approx 2\,400$): se evalúa al final de cada época para monitorear el aprendizaje sin usarlo para ajustar pesos.
+            \item \textbf{Train Set} ($40\% \approx 8\,000$): el modelo ajusta sus pesos sobre este conjunto en cada época de entrenamiento.
+            \item \textbf{Validation Set} ($20\% \approx 4\,000$): se evalúa al final de cada época para monitorear el aprendizaje sin usarlo para ajustar pesos.
             \item \textbf{Test Set} ($40\% \approx 8\,000$): se usa una única vez al final para reportar el desempeño real del modelo.
         \end{itemize}
     \end{block}
@@ -273,11 +273,11 @@ en Moldes Nanoestructurados}
         \fill[C2]  (4.80,0) rectangle (6.00, 0.6);
         \fill[CA]  (6.00,0) rectangle (10.0, 0.6);
         \draw[gray!60] (0,0) rectangle (10.0, 0.6);
-        \node[white, font=\small\bfseries]      at (2.40, 0.30) {Train $48\%$};
-        \node[white, font=\scriptsize\bfseries] at (5.40, 0.30) {Val $12\%$};
+        \node[white, font=\small\bfseries]      at (2.40, 0.30) {Train $40\%$};
+        \node[white, font=\scriptsize\bfseries] at (5.40, 0.30) {Val $20\%$};
         \node[white, font=\small\bfseries]      at (8.00, 0.30) {Test $40\%$};
-        \node[font=\scriptsize, text=C1] at (2.40, -0.30) {$\approx\!9\,600$ imágenes};
-        \node[font=\scriptsize, text=C2] at (5.40, -0.30) {$\approx\!2\,400$};
+        \node[font=\scriptsize, text=C1] at (2.40, -0.30) {$\approx\!8\,000$ imágenes};
+        \node[font=\scriptsize, text=C2] at (5.40, -0.30) {$\approx\!4\,000$};
         \node[font=\scriptsize, text=CA] at (8.00, -0.30) {$\approx\!8\,000$ imágenes};
     \end{tikzpicture}
     \end{center}
