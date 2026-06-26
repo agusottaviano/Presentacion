@@ -1,0 +1,96 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+% === PREÁMBULO ===
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+
+% === PALETA DE COLORES ===
+\definecolor{C1}{RGB}{20, 80, 60}       % verde oscuro — estructura
+\definecolor{C2}{RGB}{46, 139, 104}     % verde medio — acento
+\definecolor{C3}{RGB}{210, 240, 225}    % verde muy claro — fondo bloque
+\definecolor{CA}{RGB}{180, 100, 20}     % naranja — alerta / énfasis
+\definecolor{CG}{RGB}{245, 245, 242}    % gris cálido — fondo slide
+\definecolor{CT}{RGB}{30, 30, 30}       % texto principal
+
+% === TEMA Y COLORES ===
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% === CONFIGURAR COLORES BEAMER ===
+\setbeamercolor{normal text}{fg=CT, bg=CG}
+\setbeamercolor{frametitle}{fg=white, bg=C1}
+\setbeamercolor{structure}{fg=C1}
+\setbeamercolor{block title}{bg=C1, fg=white}
+\setbeamercolor{block body}{bg=C3}
+\setbeamercolor{block title alerted}{bg=CA, fg=white}
+\setbeamercolor{block body alerted}{bg=CA!12}
+\setbeamercolor{block title example}{bg=C2, fg=white}
+\setbeamercolor{block body example}{bg=C2!15}
+\setbeamertemplate{itemize item}{\color{C2}\textbullet}
+\setbeamertemplate{itemize subitem}{\color{C2}$\circ$}
+
+% === ELIMINAR BARRA DE NAVEGACIÓN ===
+\setbeamertemplate{navigation symbols}{}
+
+% === PIE DE PÁGINA: SOLO NÚMERO DE FILMINA ===
+\setbeamertemplate{footline}{
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+      \usebeamerfont{date in head/foot}%
+      \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% === TAMAÑOS DE FUENTES ===
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries, size=\small}
+\setbeamerfont{block body}{size=\small}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+
+% === INFORMACIÓN DEL DOCUMENTO ===
+\title{Inteligencia Artificial para la Predicción
+Automática de Parámetros Geométricos
+en Moldes Nanoestructurados}
+\subtitle{}
+\author{Agustín Ottaviano \\ \small Director: Fernando Meneses}
+\institute{Universidad Nacional de Córdoba}
+\date{\today}
+
+% === LOGO (OPCIONAL) ===
+% \logo{\includegraphics[height=1.5cm]{logo.png}}
+
+\begin{document}
+
+% ============================================
+% DIAPOSITIVA DE TÍTULO
+% ============================================
+\frame{\titlepage}
+
+% ============================================
+% TABLA DE CONTENIDOS
+% ============================================
+\begin{frame}{Contenido}
+    \tableofcontents
+\end{frame}
+
+% ============================================
+% CAPÍTULOS
+% ============================================
+
+\input{chapters/introduction/introduction.tex}
+
+\input{chapters/metodologia/metodologia.tex}
+
+\input{chapters/Resultados/resultados.tex}
+
+\end{document}

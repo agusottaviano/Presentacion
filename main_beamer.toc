@@ -3,3 +3,4 @@
 \beamer@sectionintoc {2}{Generación del Dataset Simulado}{4}{0}{2}
 \beamer@sectionintoc {3}{Normalización de las labels}{5}{0}{3}
 \beamer@sectionintoc {4}{Pipeline de Entrenamiento}{6}{0}{4}
+\beamer@sectionintoc {5}{Resultados}{10}{0}{5}

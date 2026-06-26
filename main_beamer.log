@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.4)  26 MAR 2026 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.4)  26 JUN 2026 18:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Agust/Desktop/GitHub/Presentacion/template_beamer.tex
-(c:/Users/Agust/Desktop/GitHub/Presentacion/template_beamer.tex
+**c:/Users/Agust/Desktop/GitHub/Presentacion/main_beamer.tex
+(c:/Users/Agust/Desktop/GitHub/Presentacion/main_beamer.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
@@ -670,13 +670,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count377
-) (./template_beamer.aux
+) (./main_beamer.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
 (babel)             Reported  on input line 11.
 )
-\openout1 = `template_beamer.aux'.
+\openout1 = `main_beamer.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
 LaTeX Font Info:    ... okay on input line 72.
@@ -751,9 +751,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 72.
- (./template_beamer.out) (./template_beamer.out)
+ (./main_beamer.out) (./main_beamer.out)
 \@outlinefile=\write5
-\openout5 = `template_beamer.out'.
+\openout5 = `main_beamer.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 72.
@@ -819,66 +819,66 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \. on input line 72.
 LaTeX Info: Redefining \% on input line 72.
- (./template_beamer.nav)
+ (./main_beamer.nav)
 
 [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./template_beamer.toc
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main_beamer.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 
 [2
 
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 120.
+] (./chapters/introduction/introduction.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 120.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 120.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 34.
  (c:/texlive/2025/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 )
-<Imagenes/ImagenAAO.png, id=106, 703.12688pt x 703.12688pt>
-File: Imagenes/ImagenAAO.png Graphic file (type png)
-<use Imagenes/ImagenAAO.png>
-Package pdftex.def Info: Imagenes/ImagenAAO.png  used on input line 120.
+<chapters/introduction/ImagenAAO.png, id=112, 703.12688pt x 703.12688pt>
+File: chapters/introduction/ImagenAAO.png Graphic file (type png)
+<use chapters/introduction/ImagenAAO.png>
+Package pdftex.def Info: chapters/introduction/ImagenAAO.png  used on input line 34.
 (pdftex.def)             Requested size: 152.33475pt x 152.32803pt.
 
 
 [3
 
- <./Imagenes/ImagenAAO.png>]
-<Imagenes/generada1.jpg, id=116, 301.125pt x 301.125pt>
-File: Imagenes/generada1.jpg Graphic file (type jpg)
-<use Imagenes/generada1.jpg>
-Package pdftex.def Info: Imagenes/generada1.jpg  used on input line 189.
+ <./chapters/introduction/ImagenAAO.png>]) (./chapters/metodologia/metodologia.tex
+<chapters/metodologia/generada1.jpg, id=122, 301.125pt x 301.125pt>
+File: chapters/metodologia/generada1.jpg Graphic file (type jpg)
+<use chapters/metodologia/generada1.jpg>
+Package pdftex.def Info: chapters/metodologia/generada1.jpg  used on input line 59.
 (pdftex.def)             Requested size: 48.96461pt x 48.9621pt.
-<Imagenes/generada2.jpg, id=117, 301.125pt x 301.125pt>
-File: Imagenes/generada2.jpg Graphic file (type jpg)
-<use Imagenes/generada2.jpg>
-Package pdftex.def Info: Imagenes/generada2.jpg  used on input line 189.
+<chapters/metodologia/generada2.jpg, id=123, 301.125pt x 301.125pt>
+File: chapters/metodologia/generada2.jpg Graphic file (type jpg)
+<use chapters/metodologia/generada2.jpg>
+Package pdftex.def Info: chapters/metodologia/generada2.jpg  used on input line 59.
 (pdftex.def)             Requested size: 48.96461pt x 48.9621pt.
-<Imagenes/generada3.jpg, id=118, 301.125pt x 301.125pt>
-File: Imagenes/generada3.jpg Graphic file (type jpg)
-<use Imagenes/generada3.jpg>
-Package pdftex.def Info: Imagenes/generada3.jpg  used on input line 189.
+<chapters/metodologia/generada3.jpg, id=124, 301.125pt x 301.125pt>
+File: chapters/metodologia/generada3.jpg Graphic file (type jpg)
+<use chapters/metodologia/generada3.jpg>
+Package pdftex.def Info: chapters/metodologia/generada3.jpg  used on input line 59.
 (pdftex.def)             Requested size: 48.96461pt x 48.9621pt.
-<Imagenes/generada4.jpg, id=119, 301.125pt x 301.125pt>
-File: Imagenes/generada4.jpg Graphic file (type jpg)
-<use Imagenes/generada4.jpg>
-Package pdftex.def Info: Imagenes/generada4.jpg  used on input line 189.
+<chapters/metodologia/generada4.jpg, id=125, 301.125pt x 301.125pt>
+File: chapters/metodologia/generada4.jpg Graphic file (type jpg)
+<use chapters/metodologia/generada4.jpg>
+Package pdftex.def Info: chapters/metodologia/generada4.jpg  used on input line 59.
 (pdftex.def)             Requested size: 48.96461pt x 48.9621pt.
 
 
 [4
 
-{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./Imagenes/generada1.jpg> <./Imagenes/generada2.jpg> <./Imagenes/generada3.jpg> <./Imagenes/generada4.jpg>]
-Overfull \vbox (0.45145pt too high) detected at line 233
+{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./chapters/metodologia/generada1.jpg> <./chapters/metodologia/generada2.jpg> <./chapters/metodologia/generada3.jpg> <./chapters/metodologia/generada4.jpg>]
+Overfull \vbox (0.45145pt too high) detected at line 103
  []
 
 
@@ -901,45 +901,45 @@ Overfull \vbox (0.45145pt too high) detected at line 233
 
 [9
 
-]
-<Imagenes/ImagenSEM.png, id=378, 1027.84pt x 770.88pt>
-File: Imagenes/ImagenSEM.png Graphic file (type png)
-<use Imagenes/ImagenSEM.png>
-Package pdftex.def Info: Imagenes/ImagenSEM.png  used on input line 357.
+]) (./chapters/Resultados/resultados.tex
+<chapters/Resultados/ImagenSEM.png, id=384, 1027.84pt x 770.88pt>
+File: chapters/Resultados/ImagenSEM.png Graphic file (type png)
+<use chapters/Resultados/ImagenSEM.png>
+Package pdftex.def Info: chapters/Resultados/ImagenSEM.png  used on input line 32.
 (pdftex.def)             Requested size: 195.85849pt x 146.89218pt.
 
 
 [10
 
- <./Imagenes/ImagenSEM.png>]
+ <./chapters/Resultados/ImagenSEM.png>]
 
 [11
 
 ]
-<Imagenes/resultados_conv.png, id=466, 1076.823pt x 354.123pt>
-File: Imagenes/resultados_conv.png Graphic file (type png)
-<use Imagenes/resultados_conv.png>
-Package pdftex.def Info: Imagenes/resultados_conv.png  used on input line 430.
+<chapters/Resultados/resultados_conv.png, id=471, 1076.823pt x 354.123pt>
+File: chapters/Resultados/resultados_conv.png Graphic file (type png)
+<use chapters/Resultados/resultados_conv.png>
+Package pdftex.def Info: chapters/Resultados/resultados_conv.png  used on input line 100.
 (pdftex.def)             Requested size: 348.19656pt x 114.50502pt.
 
 
 [12
 
- <./Imagenes/resultados_conv.png>]
+ <./chapters/Resultados/resultados_conv.png>]
 
 [13
 
-]
+])
 \tf@nav=\write6
-\openout6 = `template_beamer.nav'.
+\openout6 = `main_beamer.nav'.
 
 \tf@toc=\write7
-\openout7 = `template_beamer.toc'.
+\openout7 = `main_beamer.toc'.
 
 \tf@snm=\write8
-\openout8 = `template_beamer.snm'.
+\openout8 = `main_beamer.snm'.
 
- (./template_beamer.aux
+ (./main_beamer.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -947,22 +947,22 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-Package rerunfilecheck Info: File `template_beamer.out' has not changed.
-(rerunfilecheck)             Checksum: 7C0E9BF6CC160FCE25E705CCD0FB6196;670.
+Package rerunfilecheck Info: File `main_beamer.out' has not changed.
+(rerunfilecheck)             Checksum: D6BC8EFC8C8AD2FBD30804EE0B50F465;763.
  ) 
 Here is how much of TeX's memory you used:
- 28783 strings out of 467888
- 585141 string characters out of 5438241
- 964505 words of memory out of 5000000
- 56772 multiletter control sequences out of 15000+600000
+ 28809 strings out of 467888
+ 586369 string characters out of 5438241
+ 964623 words of memory out of 5000000
+ 56785 multiletter control sequences out of 15000+600000
  637248 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,123p,433b,1209s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,123p,429b,1209s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb>
-Output written on template_beamer.pdf (13 pages, 1835245 bytes).
+Output written on main_beamer.pdf (13 pages, 1835311 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 316 compressed objects within 4 object streams
- 31 named destinations out of 1000 (max. 500000)
- 1160 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 562 PDF objects out of 1000 (max. 8388607)
+ 321 compressed objects within 4 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 1168 words of extra memory for PDF output out of 10000 (max. 10000000)
 
