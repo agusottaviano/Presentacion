@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1782462105.8662 "c:/Users/Agust/Desktop/beamer_presentation/main_beamer.tex" "main_beamer.pdf" "main_beamer" 1782462108.57118 0
-  "c:/Users/Agust/Desktop/beamer_presentation/main_beamer.tex" 1782425620 3014 6f6da85318648a00a313c155e6c43f5d ""
+["pdflatex"] 1782462354.7931 "c:/Users/Agust/Desktop/GitHub/Presentacion/main_beamer.tex" "main_beamer.pdf" "main_beamer" 1782462357.73637 0
+  "c:/Users/Agust/Desktop/GitHub/Presentacion/main_beamer.tex" 1782425620 3014 6f6da85318648a00a313c155e6c43f5d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1751650849 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1751652541 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1751651810 1536 293044035fd171bb1d18cf655049b101 ""
@@ -238,11 +238,11 @@
   "chapters/metodologia/generada3.jpg" 1770445940 40712 38ec0aeb7260301b7c2b4dd39410cc1a ""
   "chapters/metodologia/generada4.jpg" 1770442269 39773 702218e359c155b66eac8559cc4abdef ""
   "chapters/metodologia/metodologia.tex" 1782425950 8637 af9d64d997832691ea2319fab5dbb572 ""
-  "main_beamer.aux" 1782462108 3827 76f288d53a28182edc6d7001dad182a1 "pdflatex"
-  "main_beamer.nav" 1782462108 2259 62e77cb1fc86feb5631927de8c7d88b5 "pdflatex"
-  "main_beamer.out" 1782462108 763 d6bc8efc8c8ad2fbd30804ee0b50f465 "pdflatex"
+  "main_beamer.aux" 1782462357 3827 76f288d53a28182edc6d7001dad182a1 "pdflatex"
+  "main_beamer.nav" 1782462357 2259 62e77cb1fc86feb5631927de8c7d88b5 "pdflatex"
+  "main_beamer.out" 1782462357 763 d6bc8efc8c8ad2fbd30804ee0b50f465 "pdflatex"
   "main_beamer.tex" 1782425620 3014 6f6da85318648a00a313c155e6c43f5d ""
-  "main_beamer.toc" 1782462108 317 74788715f87714e4f7de0e439f850be2 "pdflatex"
+  "main_beamer.toc" 1782462357 317 74788715f87714e4f7de0e439f850be2 "pdflatex"
   (generated)
   "main_beamer.aux"
   "main_beamer.log"
